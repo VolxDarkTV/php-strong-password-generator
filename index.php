@@ -19,7 +19,7 @@
     
     if(isset($_GET['pwlength'])){
       // Recupero lunghezza pw
-      $passwordLenght = (int) $_GET['pwlength'];
+      $passwordLenght = $_GET['pwlength'];
       
       // Creo la pw casuale tramite la funzione in logic/function.php
       $password = getRandomNum($passwordLenght);
@@ -38,8 +38,6 @@
       <label for="pwlength">Password Length</label>
       <input type="number" max="500" name="pwlength" id="pwlength" placeholder="select password length">
       <input type="submit" value="Gen">
-      
-      
 
     </form>
   </section>

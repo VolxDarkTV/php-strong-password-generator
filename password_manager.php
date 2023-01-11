@@ -28,10 +28,6 @@
         }
 
     ?>
-<div class="container justify-content-center d-flex ">
-
-
-</div>
 </body>
 </html>
 <!-- indirizzo sul quale devo arrivare '/password_manager.php/?pwlength=...' -->
