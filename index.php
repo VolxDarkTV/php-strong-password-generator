@@ -13,23 +13,36 @@
 </head>
 <body>
   <?php 
-    session_start();
-    
+
+
     include_once __DIR__ . "/logic/function.php";
     
-    ?>
-    <section class="container d-flex justify-content-center mt-5 p-4 bg-dark text-white rounded-3">
-      <form method="get" class="d-flex flex-column align-items-center gap-3">
-        <label for="pwlength">Password Length</label>
-        <input type="number" name="pwlength" id="pwlength" placeholder="select password length">
-        <input type="submit" value="Gen">
-        
-        <?php
-          echo getRandomNum();
-        ?>
+    if(isset($_GET['pwlength'])){
+      // Recupero lunghezza pw
+      $passwordLenght = (int) $_GET['pwlength'];
+      
+      // Creo la pw casuale tramite la funzione in logic/function.php
+      $password = getRandomNum($passwordLenght);
+      
+      // Salvo la pw nella sessione
+      $_SESSION['password'] = $password;
+      
+      header('Location:password_manager.php');
+      exit();
 
-      </form>
-    </section>
+    }
+  ?>
+  <section class="container d-flex flex-column align-items-center mt-5 p-4 bg-dark text-white rounded-3">
+    <h1 class="fw-bold">Password Generator</h1>
+    <form method="get" class="d-flex flex-column align-items-center gap-3">
+      <label for="pwlength">Password Length</label>
+      <input type="number" max="500" name="pwlength" id="pwlength" placeholder="select password length">
+      <input type="submit" value="Gen">
+      
+      
+
+    </form>
+  </section>
   
 </body>
 </html>
