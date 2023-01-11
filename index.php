@@ -5,35 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pw Gen</title>
+  
 </head>
 <body>
-  <section>
-    <form method="get">
-      <label for="pwlength">Password Length</label>
-      <input type="text" name="pwlength" id="pwlength">
-      <input type="submit" value="Gen">
+  <?php 
+    session_start();
+    
+    include_once __DIR__ . "/logic/function.php";
 
-      <?php
-        $password = $_GET['pwlength'] ?? false;
+    ?>
+    <section>
+      <form method="get">
+        <label for="pwlength">Password Length</label>
+        <input type="text" name="pwlength" id="pwlength">
+        <input type="submit" value="Gen">
 
-        // Lunghezza 
-        $passwordLenght = "$password";
-        // Tutti i possibili caratteri
-        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-        // Random String
-        $randomString = "";
+        <?php
+          echo getRandomNum($passwordLenght, $characters, $randomString);
+        ?>
 
-        // Ciclo For
-      for ($i = 0; $i < $passwordLenght; $i++){
-        $randomString .= $characters[rand(0, (strlen($characters) - 1))];
-      }
-      echo 'RandomString: ' . $randomString;
-        // Ulteriore Randomizzazione delle password, ma prima devo far generare qualcosa alla macchina
-        // $passwordGen = str_shuffle($password);
-        // echo $passwordGen;
-      ?>
-
-    </form>
-  </section>
+      </form>
+    </section>
+  <?php
+    if (!$password == null){
+      $_SESSION['pwlength'] = $password;
+      header('Location: ./password_manager.php');
+    }
+  ?>
 </body>
 </html>
