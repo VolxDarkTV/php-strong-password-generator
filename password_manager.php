@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php
-        session_start();
+        // session_start();
 
         // Importo le funzioni
         include_once __DIR__ . "/logic/function.php";

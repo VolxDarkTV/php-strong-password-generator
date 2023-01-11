@@ -12,8 +12,8 @@
 
 </head>
 <body>
-  <?php 
-
+  <?php
+  session_start();
 
     include_once __DIR__ . "/logic/function.php";
     
