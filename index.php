@@ -21,16 +21,11 @@
         <input type="submit" value="Gen">
 
         <?php
-          echo getRandomNum($passwordLenght, $characters, $randomString);
+          echo getRandomNum();
         ?>
 
       </form>
     </section>
-  <?php
-    if (!$password == null){
-      $_SESSION['pwlength'] = $password;
-      header('Location: ./password_manager.php');
-    }
-  ?>
+  
 </body>
 </html>

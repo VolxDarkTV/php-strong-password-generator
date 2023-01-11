@@ -1,18 +1,19 @@
 <?php
-    $password = $_GET['pwlength'] ?? false;
-
-    // Lunghezza 
-    $passwordLenght = "$password";
-
-    // Tutti i possibili caratteri
-    $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-    // Random String
-
-    $randomString = "";
-
+    
     // Ciclo For
-    function getRandomNum($passwordLenght, $characters, $randomString){
+    function getRandomNum(){
+        $password = $_GET['pwlength'] ?? false;
+    
+        // Lunghezza 
+        $passwordLenght = "$password";
+    
+        // Tutti i possibili caratteri
+        $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
+        // Random String
+        $randomString = "";
+
+        // Coclo FOR
         for ($i = 0; $i < $passwordLenght; $i++){
             $randomString .= $characters[rand(0, (strlen($characters) - 1))];
         }
