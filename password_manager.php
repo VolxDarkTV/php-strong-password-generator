@@ -12,6 +12,6 @@
         include_once __DIR__ . "/logic/function.php";
     ?>
 
-    <h1><?php echo getRandomNum($passwordLenght, $characters, $randomString); ?></h1>
+    <h1><?php echo getRandomNum(); ?></h1>
 </body>
 </html>
