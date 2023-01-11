@@ -13,11 +13,11 @@
     
     include_once __DIR__ . "/logic/function.php";
 
-    ?>
+  ?>
     <section>
       <form method="get">
         <label for="pwlength">Password Length</label>
-        <input type="text" name="pwlength" id="pwlength">
+        <input type="number" name="pwlength" id="pwlength">
         <input type="submit" value="Gen">
 
         <?php

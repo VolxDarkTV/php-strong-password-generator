@@ -15,3 +15,4 @@
     <h1><?php echo getRandomNum(); ?></h1>
 </body>
 </html>
+<!-- indirizzo sul quale devo arrivare '/password_manager.php/?pwlength=...' -->

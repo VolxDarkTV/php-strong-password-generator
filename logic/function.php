@@ -17,7 +17,7 @@
         for ($i = 0; $i < $passwordLenght; $i++){
             $randomString .= $characters[rand(0, (strlen($characters) - 1))];
         }
-        echo 'RandomString: ' . $randomString;
+        echo $randomString;
         // Ulteriore Randomizzazione delle password, ma prima devo far generare qualcosa alla macchina
         // $passwordGen = str_shuffle($password);
         // echo $passwordGen;
