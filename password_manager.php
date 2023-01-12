@@ -26,6 +26,10 @@
             echo "<h1 class='container p-0 d-flex justify-content-center'>" . " Genera la tua PRIMA Password!! " . "</h1>";
         }
 
+        echo 
+        "<div class='container p-0 d-flex justify-content-center'>" .
+            "<a class='btn btn-info d-flex align-items-center' href='http://localhost:8888/' </a>Back</a>" . 
+        "</div>";
     ?>
 </body>
 </html>

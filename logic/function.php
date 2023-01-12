@@ -1,7 +1,7 @@
 <?php
 
     // Ciclo For
-    function getRandomNum($passwordLenght, $minLettersOn, $maxLettersOn, $numbersOn, $symbolsOn ){
+    function getRandomNum($passwordLenght, $minLettersOn, $maxLettersOn, $numbersOn, $symbolsOn, $allCharactersGenerationOn){
         
         // Min
         $minLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -11,6 +11,9 @@
         $numbers = "0123456789";
         // Symbols
         $symbols = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+
+        // ALL
+        $allCharactersGeneration = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
         // Tutti i possibili caratteri
         $characters = "";
@@ -27,6 +30,15 @@
         if ($symbolsOn){
             $characters .= $symbols;
         }
+        // ALL
+        if ($allCharactersGenerationOn){
+            $characters .= $allCharactersGeneration;
+        }
+
+        if (strlen($characters) < 1){
+            return "ERROR!";
+        }
+        
 
         // Random String
         $randomString = "";

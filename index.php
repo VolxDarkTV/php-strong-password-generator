@@ -21,13 +21,14 @@
     $maxLetters = $_GET['maxLetters'] ?? false;
     $numbers = $_GET['numbers'] ?? false;
     $symbols = $_GET['symbols'] ?? false;
+    $allCharactersGeneration = $_GET['all'] ?? false;
 
     if(isset($_GET['pwlength'])){
       // Recupero lunghezza pw
       $passwordLenght = $_GET['pwlength'];
       
       // Creo la pw casuale tramite la funzione in logic/function.php
-      $password = getRandomNum($passwordLenght, $minLetters, $maxLetters, $numbers, $symbols);
+      $password = getRandomNum($passwordLenght, $minLetters, $maxLetters, $numbers, $symbols, $allCharactersGeneration);
       
       // Salvo la pw nella sessione
       $_SESSION['password'] = $password;
@@ -41,9 +42,12 @@
     <form method="get" class="d-flex flex-column align-items-center gap-3">
       <!-- Input NUM -->
       <label for="pwlength">Password Length</label>
-      <input type="number" max="500" name="pwlength" id="pwlength" placeholder="select password length">
+      <input type="number" max="20" name="pwlength" id="pwlength" placeholder="password length max:20">
 
       <div>
+        <!-- All Characters -->
+        <input type="checkbox" name="all">
+        <label for="all">All</label>
         <!-- Min Letters -->
         <input type="checkbox" name="minLetters">
         <label for="minLetters">Lettere minuscole</label>
